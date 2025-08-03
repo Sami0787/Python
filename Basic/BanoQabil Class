@@ -1,1 +1,46 @@
+def average(listOfNumbers):
+    sumOfAllValues = 0
+    for num in listOfNumbers:
+        sumOfAllValues = sumOfAllValues + num
+    calaverage = sumOfAllValues / len(listOfNumbers) # The result will be in float
+    return calaverage  # This must be inside the function
 
+result = average([1, 2, 3, 4, 5])  # Pass a list!
+print(result)
+
+# Output : 3.0 (Float)
+
+# To get result / outp in Integer, put '//'
+
+def average(listOfNumbers):
+    sumOfAllValues = 0
+    for num in listOfNumbers:
+        sumOfAllValues = sumOfAllValues + num
+    calaverage = sumOfAllValues // len(listOfNumbers) # putt / to make result in intege
+    return calaverage  # This must be inside the function
+
+result = average([1, 2, 3, 4, 5])  # Pass a list!
+print(result)
+
+# Output : 3
+
+
+def average(listOfNumbers):
+    sumOfAllValues = 0
+    count = 0
+    for num in listOfNumbers:
+        if isinstance(num, (int, float)):
+            sumOfAllValues += num
+            count += 1
+        elif isinstance(num, str) and num.isdigit():
+            sumOfAllValues += int(num)
+            count += 1
+    if count == 0:
+        return 0  # Avoid division by zero
+    calaverage = sumOfAllValues // count
+    return calaverage
+
+result = average([1, "2", 3, "b", 4, 5, "a"])
+print(result)
+
+# Output : 3
